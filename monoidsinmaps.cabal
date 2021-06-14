@@ -21,7 +21,7 @@ source-repository head
   type:                git
   location:            https://github.com/nolrai/monoidsinmaps.git
 common common-options
-  build-depends:       base >= 4.12.0.0 && < 4.14
+  build-depends:       base ^>= 4.14
                      , relude
   
   mixins:              base hiding (Prelude)
@@ -45,7 +45,8 @@ common common-options
 library
   import:              common-options
   hs-source-dirs:      src
-  exposed-modules:     Monoidsinmaps
+  exposed-modules:     Data.Map.ToMonoid
+  build-depends:       containers
 test-suite monoidsinmaps-test
   import:              common-options
   type:                exitcode-stdio-1.0
